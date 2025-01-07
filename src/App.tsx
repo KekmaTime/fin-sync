@@ -1,6 +1,7 @@
 import { useRoutes } from "react-router-dom"
 import { useFinancialData } from '@/hooks/useFinancialData'
 import { FinancialDataTable } from "@/components/financial-data-table"
+import { TableSkeleton } from "@/components/table-skeleton"
 
 const routes = [{ path: "/", element: <Home /> }]
 
@@ -8,7 +9,12 @@ function Home() {
   const { data, loading, error } = useFinancialData()
 
   if (loading) {
-    return <div className="container py-8">Loading...</div>
+    return (
+      <section className="container py-8">
+        <h1 className="mb-6 text-3xl font-bold">Apple Financial Data</h1>
+        <TableSkeleton />
+      </section>
+    )
   }
 
   if (error) {

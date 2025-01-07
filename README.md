@@ -12,26 +12,26 @@
 4. Run the development server: `bun run dev`
 
 ## Phase 2: Data Fetching & Display
-- [ ] Create API service to fetch Apple financial data
-- [ ] Build simple table component with required columns:
+- [x] Create API service to fetch Apple financial data
+- [x] Build simple table component with required columns:
   - Date
   - Revenue
   - Net Income 
   - Gross Profit
   - EPS
   - Operating Income
-- [ ] Add basic loading and error states
+- [x] Add basic loading and error states with skeleton UI
 
 ## Phase 3: Filtering & Sorting
+- [x] Implement sorting for:
+  - Date
+  - Revenue
+  - Net Income
+- [x] Add sort indicators on table headers
 - [ ] Add filter inputs:
   - Year range selector
   - Revenue range input
   - Net Income range input
-- [ ] Implement sorting for:
-  - Date
-  - Revenue
-  - Net Income
-- [ ] Add sort indicators on table headers
 
 ## Phase 4: Responsive Design
 - [ ] Make table mobile-friendly
