@@ -1,9 +1,15 @@
 # Financial Data Filtering App - Development Roadmap
 
 ## Phase 1: Initial Setup
-- [ ] Set up React + TypeScript + Vite project
-- [ ] Install and configure TailwindCSS
-- [ ] Add environment variable for API key
+- [x] Set up React + TypeScript + Vite project
+- [x] Install and configure TailwindCSS
+- [x] Add environment variable for API key
+
+## Setup Instructions
+1. Clone the repository
+2. Install dependencies: `bun i`
+3. Copy `.env.example` to `.env` and add your API key
+4. Run the development server: `bun run dev`
 
 ## Phase 2: Data Fetching & Display
 - [ ] Create API service to fetch Apple financial data

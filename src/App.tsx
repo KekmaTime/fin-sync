@@ -1,21 +1,56 @@
 import { useRoutes } from "react-router-dom"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+import { useFinancialData } from '@/hooks/useFinancialData'
 
 const routes = [{ path: "/", element: <Home /> }]
 
 function Home() {
+  const { data, loading, error } = useFinancialData()
+
+  if (loading) {
+    return <div className="container py-8">Loading...</div>
+  }
+
+  if (error) {
+    return <div className="container py-8 text-red-500">Error: {error.message}</div>
+  }
+
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <div className="flex max-w-[980px] flex-col items-start gap-2">
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
-          Beautifully designed components <br className="hidden sm:inline" />
-          built with Radix UI and Tailwind CSS.
-        </h1>
-        <p className="max-w-[700px] text-lg text-muted-foreground">
-          Accessible and customizable components that you can copy and paste
-          into your apps. Free. Open Source. And Vite Ready.
-        </p>
+    <section className="container py-8">
+      <h1 className="mb-6 text-3xl font-bold">Apple Financial Data</h1>
+      <div className="rounded-md border">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Date</TableHead>
+              <TableHead>Revenue</TableHead>
+              <TableHead>Net Income</TableHead>
+              <TableHead>Gross Profit</TableHead>
+              <TableHead>EPS</TableHead>
+              <TableHead>Operating Income</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {data.map((item) => (
+              <TableRow key={item.date}>
+                <TableCell>{item.date}</TableCell>
+                <TableCell>${(item.revenue / 1e9).toFixed(2)}B</TableCell>
+                <TableCell>${(item.netIncome / 1e9).toFixed(2)}B</TableCell>
+                <TableCell>${(item.grossProfit / 1e9).toFixed(2)}B</TableCell>
+                <TableCell>${item.eps.toFixed(2)}</TableCell>
+                <TableCell>${(item.operatingIncome / 1e9).toFixed(2)}B</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </div>
-      <div></div>
     </section>
   )
 }
