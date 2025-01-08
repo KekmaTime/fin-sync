@@ -28,14 +28,14 @@
   - Revenue
   - Net Income
 - [x] Add sort indicators on table headers
-- [ ] Add filter inputs:
+- [x] Add filter inputs:
   - Year range selector
   - Revenue range input
   - Net Income range input
 
 ## Phase 4: Responsive Design
 - [ ] Make table mobile-friendly
-- [ ] Make filters responsive
+- [x] Make filters responsive
 - [ ] Test on different screen sizes
 
 ## Phase 5: Deploy
