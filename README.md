@@ -1,51 +1,39 @@
-# Financial Data Filtering App - Development Roadmap
+# Financial Data Filtering App
 
-## Phase 1: Initial Setup
-- [x] Set up React + TypeScript + Vite project
-- [x] Install and configure TailwindCSS
-- [x] Add environment variable for API key
+A React application for viewing and filtering Apple's financial data using TypeScript, Vite, and TailwindCSS.
+
+## Prerequisites
+
+- Node.js (v16 or higher)
+- Bun (latest version)
+- API key from [Financial Modeling Prep](https://financialmodelingprep.com/developer/docs/)
 
 ## Setup Instructions
+
 1. Clone the repository
-2. Install dependencies: `bun i`
-3. Copy `.env.example` to `.env` and add your API key
-4. Run the development server: `bun run dev`
+```bash
+git clone https://github.com/kekmatime/fin-sync.git
+cd fin-sync
+```
 
-## Phase 2: Data Fetching & Display
-- [x] Create API service to fetch Apple financial data
-- [x] Build simple table component with required columns:
-  - Date
-  - Revenue
-  - Net Income 
-  - Gross Profit
-  - EPS
-  - Operating Income
-- [x] Add basic loading and error states with skeleton UI
+2. Install dependencies
+```bash
+bun i
+```
 
-## Phase 3: Filtering & Sorting
-- [x] Implement sorting for:
-  - Date
-  - Revenue
-  - Net Income
-- [x] Add sort indicators on table headers
-- [x] Add filter inputs:
-  - Year range selector
-  - Revenue range input
-  - Net Income range input
+3. Create `.env` file
+```bash
+touch .env
+```
 
-## Phase 4: Responsive Design
-- [x] Make table mobile-friendly
-- [x] Make filters responsive
-- [x] Test on different screen sizes
+4. Add your API key to the `.env` file
+```bash
+VITE_API_KEY=your_api_key_here
+```
 
-## Phase 5: Deploy
-- [ ] Deploy to Vercel
-- [ ] Add setup instructions in README
+5. Run the development server
+```bash
+bun run dev
+```
 
-## Tech Stack
-- React + TypeScript
-- Vite
-- TailwindCSS
-- Shadcn/UI
-
-
+6. Open your browser and navigate to `http://localhost:5173` to view the app.
