@@ -36,9 +36,11 @@ import {
           <Button
             variant="ghost"
             onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            className="w-full p-0 md:p-2"
           >
-            Date
-            <ArrowUpDown className="ml-2 h-4 w-4" />
+            <span className="hidden md:inline">Date</span>
+            <span className="md:hidden">Date</span>
+            <ArrowUpDown className="ml-1 h-3 w-3 md:ml-2 md:h-4 md:w-4" />
           </Button>
         )
       },
@@ -50,15 +52,17 @@ import {
           <Button
             variant="ghost"
             onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            className="w-full p-0 md:p-2"
           >
-            Revenue
-            <ArrowUpDown className="ml-2 h-4 w-4" />
+            <span className="hidden md:inline">Revenue</span>
+            <span className="md:hidden">Rev</span>
+            <ArrowUpDown className="ml-1 h-3 w-3 md:ml-2 md:h-4 md:w-4" />
           </Button>
         )
       },
       cell: ({ row }) => {
         const amount = parseFloat(row.getValue("revenue"))
-        return `$${(amount / 1e9).toFixed(2)}B`
+        return <span className="whitespace-nowrap">${(amount / 1e9).toFixed(1)}B</span>
       },
     },
     {
@@ -68,15 +72,17 @@ import {
           <Button
             variant="ghost"
             onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            className="w-full p-0 md:p-2"
           >
-            Net Income
-            <ArrowUpDown className="ml-2 h-4 w-4" />
+            <span className="hidden md:inline">Net Income</span>
+            <span className="md:hidden">Net Inc</span>
+            <ArrowUpDown className="ml-1 h-3 w-3 md:ml-2 md:h-4 md:w-4" />
           </Button>
         )
       },
       cell: ({ row }) => {
         const amount = parseFloat(row.getValue("netIncome"))
-        return `$${(amount / 1e9).toFixed(2)}B`
+        return <span className="whitespace-nowrap">${(amount / 1e9).toFixed(1)}B</span>
       },
     },
     {
@@ -84,7 +90,7 @@ import {
       header: "Gross Profit",
       cell: ({ row }) => {
         const amount = parseFloat(row.getValue("grossProfit"))
-        return `$${(amount / 1e9).toFixed(2)}B`
+        return <span className="whitespace-nowrap">${(amount / 1e9).toFixed(1)}B</span>
       },
     },
     {
@@ -92,15 +98,15 @@ import {
       header: "EPS",
       cell: ({ row }) => {
         const amount = parseFloat(row.getValue("eps"))
-        return `$${amount.toFixed(2)}`
+        return <span className="whitespace-nowrap">${amount.toFixed(2)}</span>
       },
     },
     {
       accessorKey: "operatingIncome",
-      header: "Operating Income",
+      header: "Op. Income",
       cell: ({ row }) => {
         const amount = parseFloat(row.getValue("operatingIncome"))
-        return `$${(amount / 1e9).toFixed(2)}B`
+        return <span className="whitespace-nowrap">${(amount / 1e9).toFixed(1)}B</span>
       },
     },
   ]

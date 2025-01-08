@@ -10,20 +10,20 @@ function Home() {
 
   if (loading) {
     return (
-      <section className="container py-8">
-        <h1 className="mb-6 text-3xl font-bold">Apple Financial Data</h1>
+      <section className="container max-w-full px-2 py-4 md:px-4 md:py-8">
+        <h1 className="mb-4 text-2xl font-bold md:mb-6 md:text-3xl">Apple Financial Data</h1>
         <TableSkeleton />
       </section>
     )
   }
 
   if (error) {
-    return <div className="container py-8 text-red-500">Error: {error.message}</div>
+    return <div className="container px-2 py-4 text-red-500 md:px-4 md:py-8">Error: {error.message}</div>
   }
 
   return (
-    <section className="container py-8">
-      <h1 className="mb-6 text-3xl font-bold">Apple Financial Data</h1>
+    <section className="container max-w-full px-2 py-4 md:px-4 md:py-8">
+      <h1 className="mb-4 text-2xl font-bold md:mb-6 md:text-3xl">Apple Financial Data</h1>
       <FinancialDataTable data={data} />
     </section>
   )
