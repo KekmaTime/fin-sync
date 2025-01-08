@@ -34,9 +34,9 @@
   - Net Income range input
 
 ## Phase 4: Responsive Design
-- [ ] Make table mobile-friendly
+- [x] Make table mobile-friendly
 - [x] Make filters responsive
-- [ ] Test on different screen sizes
+- [x] Test on different screen sizes
 
 ## Phase 5: Deploy
 - [ ] Deploy to Vercel
